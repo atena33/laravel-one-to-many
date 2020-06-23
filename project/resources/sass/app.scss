@@ -1,0 +1,22 @@
+body {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  .header {
+    height: 100px;
+    background: yellow;
+  }
+
+  .main {
+    margin: 20px;
+      label, input {
+      margin: 20px;
+    }
+  }
+
+  .footer
+    {
+      height: 100px;
+      background: green;
+  }
+}
