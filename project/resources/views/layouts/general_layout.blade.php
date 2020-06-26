@@ -8,7 +8,9 @@
   <body>
     @include('components.header')
 
-    @yield('content')
+    <div class="main">
+      @yield('content')
+    </div>
 
     @include('components.footer')
   </body>

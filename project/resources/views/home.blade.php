@@ -5,12 +5,16 @@
   <ul>
     @foreach ($tasks as $task)
       <li>
-        {{$task['name']}}
-        <small>
-          <h6>EMPLOYEE:</h6>
-          {{ $task -> employee -> firstname}}
-        </small>
+        TASK:
+        {{$task['name']}} <br>
+        EMPLOYEE:
+        {{ $task -> employee -> name}}
+        {{ $task -> employee -> lastname}}
+        <br>
+        <a href="{{route('edit_task', $task['id'])}}">EDIT</a>
+        <br>-------------<br>
       </li>
+
     @endforeach
   </ul>
 @endsection
