@@ -12,6 +12,7 @@ class TaskController extends Controller
     public function index(){
 
       $tasks = Task::all();
+
       return view('home', compact('tasks'));
     }
 
@@ -37,4 +38,6 @@ class TaskController extends Controller
 
       return redirect() -> route('home');
     }
+
+    
 }

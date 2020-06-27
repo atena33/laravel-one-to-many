@@ -1,6 +1,7 @@
 @extends('layouts.general_layout')
 
 @section('content')
+  
   <form  action="{{route('update_task', $task['id'])}}" method="post">
     @csrf
     @method('POST')

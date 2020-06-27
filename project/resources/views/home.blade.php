@@ -8,8 +8,11 @@
         TASK:
         {{$task['name']}} <br>
         EMPLOYEE:
-        {{ $task -> employee -> name}}
-        {{ $task -> employee -> lastname}}
+        <a href="{{route('show_employee', $task -> employee -> id)}}">
+          {{ $task -> employee -> name}}
+          {{ $task -> employee -> lastname}}
+        </a>
+
         <br>
         <a href="{{route('edit_task', $task['id'])}}">EDIT</a>
         <br>-------------<br>

@@ -10,10 +10,27 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-  public function index(){
+  public function show($id){
 
-    $employees = Employee::all();
-    return view('home', compact('employees'));
+    $employee = Employee::findOrfail($id);
+
+    return view('show_employee', compact('employee'));
   }
+
+  public function edit($id){
+
+    $employee = Employee::findOrfail($id);
+    $tasks = Task::all();
+    $locations = Location::all();
+
+    return view('edit_employee', compact('employee', 'tasks', 'locations'));
+  }
+
+  public function update(Request $request, $id){
+
+     
+  }
+
+
 
 }

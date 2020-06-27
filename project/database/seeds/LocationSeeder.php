@@ -14,7 +14,7 @@ class LocationSeeder extends Seeder
      */
     public function run()
     {
-        factory (Location::class, 50) -> create() -> each(function($location){
+        factory (Location::class, 10) -> create() -> each(function($location){
 
           $employees = Employee::inRandomOrder() -> take(rand(1, 10)) -> get();
           $location -> employees() -> attach($employees);
