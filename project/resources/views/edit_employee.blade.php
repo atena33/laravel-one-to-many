@@ -15,17 +15,6 @@
     <label for="dateOfBirth">DATE OF BIRTH</label>
     <input type="text" name="dateOfBirth" value="{{$employee -> dateOfBirth}}"> <br>
 
-    <label for="tasks">TASKS</label>
-
-      @foreach ($tasks as $task)
-        <input type="checkbox" name="tasks[]" value="{{$task['id']}}"
-          @foreach ($employee -> tasks as $employee_tasks)
-            @if ($task -> id == $employee_tasks -> id)
-            checked
-            @endif
-          @endforeach
-      @endforeach
-        >
 
     <label for="locations">LOCATIONS</label>
         @foreach ($locations as $location)
@@ -35,10 +24,10 @@
               checked
             @endif
           @endforeach
-        @endforeach
           >
+          {{$location['city']}}
+        @endforeach
+
     <input type="submit" name="submit" value="UPDATE">
-
-
   </form>
 @endsection
