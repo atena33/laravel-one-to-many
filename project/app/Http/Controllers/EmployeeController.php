@@ -33,6 +33,7 @@ class EmployeeController extends Controller
 
   public function update(Request $request, $id){
 
+
     $validateData = $request -> validate([
 
        'name' => 'required',
@@ -41,6 +42,7 @@ class EmployeeController extends Controller
        'role' => 'required',
        'locations' => 'required'
      ]);
+
 
     $employee = Employee::findOrfail($id);
 
@@ -52,6 +54,6 @@ class EmployeeController extends Controller
 
     $employee -> save();
 
-     return redirect() -> route('show_employee');
+     return redirect() -> route('index_employees');
   }
 }

@@ -2,7 +2,20 @@
 
 @section('content')
 
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
   <form action="{{route('update_employee', $employee['id'])}}" method="post">
+
+
+
     @csrf
     @method('POST')
 
@@ -15,6 +28,8 @@
     <label for="dateOfBirth">DATE OF BIRTH</label>
     <input type="text" name="dateOfBirth" value="{{$employee -> dateOfBirth}}"> <br>
 
+    <label for="role">ROLE</label>
+    <input type="text" name="role" value="{{$employee -> role}}"> <br>
 
     <label for="locations">LOCATIONS</label>
         @foreach ($locations as $location)
